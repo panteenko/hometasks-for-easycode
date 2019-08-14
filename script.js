@@ -282,10 +282,12 @@ console.log(`-----------------------------------------`);
 // Циклы. На основе строки “i am in the easycode” сделать новую строку где первые буквы каждого слова будут в верхнем регистре. Использовать for или while.
 
 let string = 'i am in the easycode';
+let newStr = '';
 
 for (let i = 0; i < string.length - 1; i++) {
-  string = `${string[0].toUpperCase()}${string.slice(1)}`;
+  newStr = `${string[0].toUpperCase()}${string.slice(1)}`;
 
 }
-console.log(string);
+console.log(newStr);
+//с циклами связанными со строками сплошная не понятка((
 
