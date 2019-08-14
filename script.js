@@ -281,13 +281,29 @@ console.log(`-----------------------------------------`);
 
 // Циклы. На основе строки “i am in the easycode” сделать новую строку где первые буквы каждого слова будут в верхнем регистре. Использовать for или while.
 
-let string = 'i am in the easycode';
-let newStr = '';
+let string = ' i am in the easycode'; //Получилось решить задачу, только добавив пробел перед первым символом
+let newString = '';
 
-for (let i = 0; i < string.length - 1; i++) {
-  newStr = `${string[0].toUpperCase()}${string.slice(1)}`;
+for (let i = 0; i < string.length; i++) {
+
+  newString += (string[i - 1] == ' ') ? string[i].toUpperCase() : string[i];
+
 
 }
-console.log(newStr);
-//с циклами связанными со строками сплошная не понятка((
+console.log(newString);
+console.log(`-----------------------------------------`);
+
+//Дана строка “tseb eht ma i”. Используя циклы, сделать строку-перевертыш (то есть последняя буква становится первой, предпоследняя - второй итд).
+
+let bestString = 'tseb eht ma i';
+let revString = '';
+
+for (let i = bestString.length - 1; i >= 0; i--) {
+  revString += bestString[i];
+}
+console.log(revString);
+console.log(`-----------------------------------------`);
+
+//Факториал числа - произведение всех натуральных чисел от 1 до n
+// включительно: 3! = 3*2*1, 5! = 5*4*3*2*1. С помощью циклов вычислить факториал числа 10. Использовать for.
 
