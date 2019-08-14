@@ -148,12 +148,15 @@ let item = {
 if (item.hasOwnProperty('discount') && item.discount !== "" ) {
   // item.priceWithDiscount = 150; // при попытке создать новый ключ в объекте и вывести его в консоль, получаю ошибку: priceWithDiscount is not defined.
   //console.log(priceWithDiscount);
-  //так же не разобрался как привестик числовому типу поля price и discount если обращаюсь к ним через item.price и item.discount 
+  //так же не разобрался как привести к числовому типу поля price и discount если обращаюсь к ним через item.price и item.discount 
 
-  console.log(`У объекта есть поле дисконт и оно имеет какое-то значение`);
+  item.priceWithDiscount = parseInt(item.price) - parseInt(item.discount);
+  
+  console.log(`Цена со скидкой: ${item.priceWithDiscount}$`);
 } else {
-  console.log(item.price)
+  console.log(price);
 }
+
 console.log(`-----------------------------------------`);
 
 //Написать условие если цена товара больше или равна минимальной цене и меньше или равна максимальной цене то вывести в консоль название этого товара, иначе вывести в консоль что товаров не найдено.
@@ -164,7 +167,7 @@ let product = {
 let min = 10; // минимальная цена
 let max = 20; // максимальная цена
 
-if (product.price >= min && product.price <= max) { // та же проблема, что и в предыдущем задании. не пойму как преобразовать тип в данной ситуации.
+if (parseInt(product.price) >= min && parseInt(product.price) <= max) { 
   console.log(product.name);
 } else {
   console.log('Товаров не найдено');
@@ -281,7 +284,8 @@ console.log(`-----------------------------------------`);
 let string = 'i am in the easycode';
 
 for (let i = 0; i < string.length - 1; i++) {
-  let newString = string[0].toUpperCase + string.substr[1];
-  return newString; // какая-то мазафака с ретёрнами у меня, выдаёт ошибку: Illegal return statement
+  string = `${string[0].toUpperCase()}${string.slice(1)}`;
+
 }
-console.log(newString);
+console.log(string);
+
