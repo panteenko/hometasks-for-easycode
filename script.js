@@ -296,10 +296,17 @@ console.log(`-----------------------------------------`);
 //Дана строка “tseb eht ma i”. Используя циклы, сделать строку-перевертыш (то есть последняя буква становится первой, предпоследняя - второй итд).
 
 let bestString = 'tseb eht ma i';
+let i = bestString.length;
 let revString = '';
 
-for (let i = bestString.length - 1; i >= 0; i--) {
-  revString += bestString[i];
+// for (let i = bestString.length - 1; i >= 0; i--) {
+//   revString += bestString[i];
+// }
+// console.log(revString);
+// console.log(`-----------------------------------------`);
+
+while (i--) {
+revString += bestString[i];
 }
 console.log(revString);
 console.log(`-----------------------------------------`);
