@@ -281,14 +281,17 @@ console.log(`-----------------------------------------`);
 
 // Циклы. На основе строки “i am in the easycode” сделать новую строку где первые буквы каждого слова будут в верхнем регистре. Использовать for или while.
 
-let string = ' i am in the easycode'; //Получилось решить задачу, только добавив пробел перед первым символом
+let string = 'i am in the easycode'; //Получилось решить задачу, только добавив пробел перед первым символом
 let newString = '';
 
 for (let i = 0; i < string.length; i++) {
-
-  newString += (string[i - 1] == ' ') ? string[i].toUpperCase() : string[i];
-
-
+  if (i === 0) {
+    newString += string[i].toUpperCase();
+  } else if (string[i - 1] === ' ') {
+    newString += string[i].toUpperCase();
+  } else {
+    newString += string[i];
+  }
 }
 console.log(newString);
 console.log(`-----------------------------------------`);
@@ -314,3 +317,10 @@ console.log(`-----------------------------------------`);
 //Факториал числа - произведение всех натуральных чисел от 1 до n
 // включительно: 3! = 3*2*1, 5! = 5*4*3*2*1. С помощью циклов вычислить факториал числа 10. Использовать for.
 
+let num = 10;
+// let fact;
+ 
+for (let i = num; i > 0; i--) {
+  num *= i;
+}
+console.log(num);
