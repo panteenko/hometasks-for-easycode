@@ -1,3 +1,4 @@
+
 //Строки. Получаем первый и последний символ в строке
 let str = "some test string";
 
@@ -324,3 +325,55 @@ for (let i = num; i > 0; i--) {
   num *= i;
 }
 console.log(num);
+console.log(`-----------------------------------------`);
+
+// //На основе строки “JavaScript is a pretty good language” сделать новую строку,
+// где каждое слово начинается с большой буквы, а пробелы удалены. Использовать for.
+
+let jsPretty = 'JavaScript is a pretty good language';
+let resStr;
+
+for (let i = 0; i < jsPretty.length; i++) {
+  if (i === 0) {
+    resStr = jsPretty[i].toUpperCase();
+  } else if (jsPretty[i - 1] == " ") {
+    resStr += jsPretty[i].toUpperCase();
+  } else {
+    resStr += jsPretty[i];
+  }
+}
+resStr = resStr.replace(/\s/g, '');
+ 
+console.log(resStr);
+console.log(`-----------------------------------------`);
+
+//Найти все нечетные числа в массиве от 1 до 15 включительно и вывести их в консоль. Массив [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15] Использовать for of.
+
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+
+for (let i of arr) {
+  if (i % 2 === 1) {
+    console.log(i);
+  }
+}
+console.log(`-----------------------------------------`);
+
+//Дан объект:
+// let list = {
+//   name: ‘denis’, work: ‘easycode’, age: 29
+//   }
+//   Перебрать объект и если значение в свойстве это строка то переписать ее всю в верхнем регистре. Использовать for in.
+
+let list = {
+    name: 'denis',
+    work: 'easycode',
+    age: 29
+}
+
+for (let key in list) {
+  if (typeof list[key] === 'string') {
+    list[key] = list[key].toUpperCase();
+  }
+}
+console.table(list);
+console.log(`-----------------------------------------`);
