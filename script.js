@@ -282,7 +282,7 @@ console.log(`-----------------------------------------`);
 
 // Циклы. На основе строки “i am in the easycode” сделать новую строку где первые буквы каждого слова будут в верхнем регистре. Использовать for или while.
 
-let string = 'i am in the easycode'; //Получилось решить задачу, только добавив пробел перед первым символом
+let string = 'i am in the easycode';
 let newString = '';
 
 for (let i = 0; i < string.length; i++) {
@@ -420,6 +420,67 @@ console.log(`-----------------------------------------`);
 
 * подсказка: для получения кода используйте специальный метод */
 
-function uni (str) {
+function getCodeStringFromText (str) {
+  let newStr = "";
+    let strWithSpaces = str.split("");
+        for (let i = 0; i < strWithSpaces.length; i++) {
+          newStr += str.charCodeAt(i) + " ";
+        }
+  return newStr;
+}
+console.log(getCodeStringFromText('hello'));
+console.log(`-----------------------------------------`);
+
+/* 4. Создать функцию угадай число. Она принимает число от 1-10 (обязательно проверить что число не больше 10 и не меньше 0). Генерирует рандомное число от 1-10 и сравнивает с переданным числом если они совпали то возвращает “Вы выиграли” если нет то “Вы не угадали ваше число 8 а выпало число 5”. Числа в строке указаны как пример вы подставляете реальные числа.*/
+
+function guessNum (num) {
+  if (num > 0 && num < 10) {
+    let rndm = Math.round(Math.random() * 10); 
+    if (num === rndm) {
+      console.log (`Вы выиграли`);
+    } else {
+      console.log(`Вы не угадали ваше число ${num}, а выпало число ${rndm}`);
+    }
+  } else {
+    console.log(`Вы ввели не верное число, введите число от 0 до 10`);
+  }
   
+}
+guessNum(5);
+console.log(`-----------------------------------------`);
+
+/*5. Создать функцию, которая принимает число n и возвращает массив, заполненный числами от 1 до n: `getArray(10); // [1,2,3,4,5,6,7,8,9,10]` */
+
+function getArray (num) {
+  let arr1 = [];
+  for (let i = 1; i <=num; i++) {
+    arr1.push(i);  
+  }
+  return arr1;
+}
+
+console.log(getArray(10));
+console.log(`-----------------------------------------`);
+
+/*6. Создать функцию, которая принимает массив, а возвращает новый массив с дублированными элементами входного массива:
+`doubleArray([1,2,3]) // [1,2,3,1,2,3]` */
+
+function dubleArray (array) {
+  let newArray = [];
+  for (let i = 0; i < array.length; i++) {
+    newArray.push(array[i]);
+  }
+  return newArray.concat(array);
+}
+console.log(dubleArray([1, 2, 3]));
+console.log(`-----------------------------------------`);
+
+/*7. Создать функцию, которая принимает произвольное (любое) число массивов и удаляет из каждого массива первый элемент, а возвращает массив из оставшихся значений: 
+`changeCollection([1,2,3], [‘a’, ’b’, ‘c’]) → [ [2,3], [‘b’, ‘c’] ], changeCollection([1,2,3]) → [ [2,3] ] и т.д.` */
+
+function changeCollection (...arrays) {
+  let restArray = [];
+  for (let i = 0; i < array.length; i++) {
+    
+  }
 }
