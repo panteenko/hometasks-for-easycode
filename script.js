@@ -319,7 +319,6 @@ console.log(`-----------------------------------------`);
 // включительно: 3! = 3*2*1, 5! = 5*4*3*2*1. С помощью циклов вычислить факториал числа 10. Использовать for.
 
 let num = 10;
-// let fact;
  
 for (let i = num; i > 0; i--) {
   num *= i;
@@ -377,3 +376,50 @@ for (let key in list) {
 }
 console.table(list);
 console.log(`-----------------------------------------`);
+
+//HomeWork #2
+
+//# Функции
+
+// 1. Создать функцию `multiply`, которая будет принимать любое количество чисел и возвращать их произведение: `multiply(1,2,3) = 6 (1*2*3)`
+
+// * Если нет ни одного аргумента, вернуть ноль: `multiply() // 0`
+
+function multiply(...args) {
+  if (args.length == 0) {
+    return 0;
+  } else {
+  let resMult = 1;
+  for (let arg of args) {
+    resMult *= arg; 
+ }
+    return resMult;
+}
+}
+
+console.log(multiply(2, 2, 2));
+console.log(`-----------------------------------------`);
+
+//2. Создать функцию, которая принимает строку и возвращает строку-перевертыш: `reverseString(‘test’) // “tset”`.
+
+function reverseString (str) {
+  let i = str.length;
+  let newStr1 = '';
+  while (i--) {
+    newStr1 += str[i];
+    }
+    return newStr1;
+}
+
+console.log(reverseString('tset'));
+console.log(`-----------------------------------------`);
+
+/*3. Создать функцию, которая в качестве аргумента принимает строку из букв и возвращает строку, где каждый символ разделен пробелом и заменен на юникод-значение символа: 
+
+`getCodeStringFromText(‘hello’) // “104 101 108 108 111” `
+
+* подсказка: для получения кода используйте специальный метод */
+
+function uni (str) {
+  
+}
