@@ -478,9 +478,133 @@ console.log(`-----------------------------------------`);
 /*7. Создать функцию, которая принимает произвольное (любое) число массивов и удаляет из каждого массива первый элемент, а возвращает массив из оставшихся значений: 
 `changeCollection([1,2,3], [‘a’, ’b’, ‘c’]) → [ [2,3], [‘b’, ‘c’] ], changeCollection([1,2,3]) → [ [2,3] ] и т.д.` */
 
-function changeCollection (...arrays) {
-  let restArray = [];
-  for (let i = 0; i < array.length; i++) {
-    
+// function changeCollection() {
+//   let restArray = 
+//   arguments.forEach(restArray = array.shift()); 
+//     return restArray;
+// }
+// console.log(changeCollection([1,2,3], ["a", "b, "c"]));
+
+// /*8. Создать функцию которая принимает массив пользователей, поле на которое хочу проверить и значение на которое хочу проверять. Проверять что все аргументы переданы. Возвращать новый массив с пользователями соответсвующие указанным параметрам.
+
+// `funcGetUsers(users, “gender”, “male”); // [ {name: “Denis”, age: “29”, gender: “male”} , {name: “Ivan”, age: “20”, gender: “male”} ]` */
+
+
+// /* */
+
+
+
+//Домашка № 3
+
+/*# Задание 1
+дана разметка:
+```html
+<html>
+<head></head>
+<body>
+    <div>
+        <p>Text</p>
+        <p>Other</p>
+        <p>Next</p>
+        <p>Last</p>
+    </div>
+    <div></div>
+    <div></div>
+</body>
+</html>
+```
+
+Зная структуру html, с помощью изученных
+методов получить (в консоль):
+1. head */
+
+ console.log(document.head);
+ console.log(`-----------------------------------------`);
+
+ //2. body
+ console.log(document.body);
+ console.log(`-----------------------------------------`);
+
+ //3. все дочерние элементы body и вывести их в консоль.
+ console.log(document.body.children);
+ console.log(`-----------------------------------------`);
+
+//  4. первый div и все его дочерние узлы
+//  а) вывести все дочерние узлы в консоль
+ console.log(document.body.firstElementChild);
+ console.log(`-----------------------------------------`);
+
+//б) вывести в консоль все дочерние узлы,
+// кроме первого и последнего
+// Для навигации по DOM использовать методы,
+// которые возвращают только элементы
+
+let firstDiv = document.body.firstElementChild;
+
+function getAllChildsExceptFirsrAndLast () {
+    for (let i = 1; i < firstDiv.children.length -1; i++) {
+      console.log(firstDiv.children[i]);
+    }
+  
+  return firstDiv.children;
+}
+
+getAllChildsExceptFirsrAndLast(firstDiv);
+console.log(`-----------------------------------------`);
+
+
+/*# Задание 2
+Разметка для задач
+```html
+<div>
+  <article>
+    <p>Lorem ipsum dolor sit amet, odio omnesque ius cu, quo ex atqui antiopam. At detracto menandri eos. Duo in causae viderer, graeci <a href="#">reprehendunt</a> has in. Decore <mark>nemore</mark> philosophia te pro, nobis legere causae ex mei, odio putant mentitum ea ius. Vix nostro deserunt explicari eu.</p>
+  </article>
+</div>
+<ul>
+  <li><a href="#">Link1</a></li>
+  <li><a href="#">Link2</a></li>
+  <li><a href="#">Link3</a></li>
+  <li><a href="#">Link4</a></li>
+</ul><span></span>
+<a href="#">Some link</a>
+```
+
+1. Создать функцию, которая принимает два элемента. Функция проверяет, является ли первый элемент родителем для второго:
+
+```javascript
+isParent(parent, child);
+isParent(document.body.children[0], document.querySelector('mark'));
+// true так как первый див является родительским элементом для mark
+
+isParent(document.querySelector('ul'), document.querySelector('mark'));
+// false так ul НЕ является родительским элементом для mark
+```
+> Функция принимает только DOM объекты. */
+
+let ul1 = document.querySelector('ul');
+let li1 = document.querySelector('li');
+function isParent (parent, child) {
+  if (child.parentElement === parent ) {
+    return true;
+  } else if (parent.parentElement === child) {
+    return false;
   }
 }
+console.log(isParent(ul1, li1));
+console.log(`-----------------------------------------`);
+
+/*2. Получить список всех ссылок, которые не находятся внутри списка ul */
+
+let links = Array.from(document.querySelectorAll('a')).filter(link => !link.closest('ul'));
+console.log(links);
+console.log(`-----------------------------------------`);
+
+/*3. Найти элемент, который находится перед и после списка ul */
+
+let ul3 = document.querySelector('ul');
+
+let prevElem = ul3.previousElementSibling;
+let nextElem = ul3.nextElementSibling;
+
+console.log(`Предыдущий элемент ${prevElem} , следующий элемент  ${nextElem}`);
