@@ -478,14 +478,14 @@ console.log(`-----------------------------------------`);
 /*7. Создать функцию, которая принимает произвольное (любое) число массивов и удаляет из каждого массива первый элемент, а возвращает массив из оставшихся значений: 
 `changeCollection([1,2,3], [‘a’, ’b’, ‘c’]) → [ [2,3], [‘b’, ‘c’] ], changeCollection([1,2,3]) → [ [2,3] ] и т.д.` */
 
-function changeCollection() {
-  let restArray = 
-  arguments.forEach(restArray = array.shift()); 
-    return restArray;
-}
-console.log(changeCollection([1,2,3], ["a", "b, "c"]));
+// function changeCollection() {
+//   let restArray = 
+//   arguments.forEach(restArray = array.shift()); 
+//     return restArray;
+// }
+// console.log(changeCollection([1,2,3], ["a", "b, "c"]));
 
-// /*8. Создать функцию которая принимает массив пользователей, поле на которое хочу проверить и значение на которое хочу проверять. Проверять что все аргументы переданы. Возвращать новый массив с пользователями соответсвующие указанным параметрам.
+// // /*8. Создать функцию которая принимает массив пользователей, поле на которое хочу проверить и значение на которое хочу проверять. Проверять что все аргументы переданы. Возвращать новый массив с пользователями соответсвующие указанным параметрам.
 
 // `funcGetUsers(users, “gender”, “male”); // [ {name: “Denis”, age: “29”, gender: “male”} , {name: “Ivan”, age: “20”, gender: “male”} ]` */
 
@@ -607,4 +607,4 @@ let ul3 = document.querySelector('ul');
 let prevElem = ul3.previousElementSibling;
 let nextElem = ul3.nextElementSibling;
 
-console.log(`Предыдущий элемент ${prevElem} , следующий элемент  ${nextElem}`);
+console.log(`Предыдущий элемент ${prevElem}, следующий элемент  ${nextElem}`);
