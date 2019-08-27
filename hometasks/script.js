@@ -495,8 +495,12 @@ console.log(`-----------------------------------------`);
 
 // `funcGetUsers(users, “gender”, “male”); // [ {name: “Denis”, age: “29”, gender: “male”} , {name: “Ivan”, age: “20”, gender: “male”} ]` */
 
+// function funcGetUsers (users, prop, value) {
+//   if (!users === '' && !prop === '' && !value === '') {
+//     return newArray = [];
+//   }
+// }
 
-// /* */
 
 
 
@@ -587,18 +591,21 @@ isParent(document.querySelector('ul'), document.querySelector('mark'));
 // false так ul НЕ является родительским элементом для mark
 ```
 > Функция принимает только DOM объекты. */
+/**
+ * Раскоментируй решение ниже и в файле index.html кусок кода с названием Разметка для задачи 1
+ */
 
-let ul1 = document.querySelector('ul');
-let li1 = document.querySelector('li');
-function isParent (parent, child) {
-  if (child.parentElement === parent ) {
-    return true;
-  } else if (parent.parentElement === child) {
-    return false;
-  }
-}
-console.log(isParent(ul1, li1));
-console.log(`-----------------------------------------`);
+// let ul1 = document.querySelector('ul');
+// let li1 = document.querySelector('li');
+// function isParent (parent, child) {
+//   if (child.parentElement === parent ) {
+//     return true;
+//   } else if (parent.parentElement === child) {
+//     return false;
+//   }
+// }
+// console.log(isParent(ul1, li1));
+// console.log(`-----------------------------------------`);
 
 /*2. Получить список всех ссылок, которые не находятся внутри списка ul */
 
@@ -608,9 +615,19 @@ console.log(`-----------------------------------------`);
 
 /*3. Найти элемент, который находится перед и после списка ul */
 
-let ul3 = document.querySelector('ul');
+/**
+ * Раскоментируй решение ниже и в файле index.html кусок кода с названием Разметка для задачи 2
+ */
+// let ul3 = document.querySelector('ul');
 
-let prevElem = ul3.previousElementSibling;
-let nextElem = ul3.nextElementSibling;
+// let prevElem = ul3.previousElementSibling;
+// let nextElem = ul3.nextElementSibling;
 
-console.log(`Предыдущий элемент ${prevElem}, следующий элемент  ${nextElem}`);
+// console.log(`Предыдущий элемент ${prevElem}, следующий элемент  ${nextElem}`);
+console.log(`-----------------------------------------`);
+
+
+
+
+// Домашка № 4
+
