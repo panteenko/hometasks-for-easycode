@@ -495,11 +495,11 @@ console.log(`-----------------------------------------`);
 
 // `funcGetUsers(users, “gender”, “male”); // [ {name: “Denis”, age: “29”, gender: “male”} , {name: “Ivan”, age: “20”, gender: “male”} ]` */
 
-// function funcGetUsers (users, prop, value) {
-//   if (!users === '' && !prop === '' && !value === '') {
-//     return newArray = [];
-//   }
-// }
+function funcGetUsers (users, prop, value) {
+  if (!users === '' && !prop === '' && !value === '') {
+    return newArray = [];
+  }
+}
 
 
 
