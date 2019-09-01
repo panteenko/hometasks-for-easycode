@@ -28,10 +28,8 @@ let textUl = document.querySelector('ul');
 let resArr = [];
 
 function getTextFromUl (list) {
-  
-  for (let i = 0; i < textUl.length; i++) {
-    resArr.push(textUl[i]);
-  }  
+  let text = textUl.innerText;
+  resArr = text.split('\n');
   console.log(resArr);
 }
 
@@ -42,13 +40,14 @@ console.log('----------------------------------------------');
 // 4. В параграфе заменить все дочерние текстовые узлы на “-text-” (вложенные теги должны остаться). Конечный результат:
 // `-text-<a href="#">reprehendunt</a>-text-<mark>nemore</mark>-text-`
 
-let innerText = document.querySelector('p');
-// if () {
+let textToChange = document.querySelector('p');
 
-// }
-// innerText.innerText = "-text-";
 
-console.log(innerText);
+textToChange.firstChild.data = "-text-";
+textToChange.lastChild.data = "-text-";
+
+
+console.log(textToChange);
 console.log('----------------------------------------------');
 
 /**
