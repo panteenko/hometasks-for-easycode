@@ -55,9 +55,6 @@ console.log('----------------------------------------------');
 
 1. Найти в коде список `ul` и добавить класс `“list”`
 
-3. На `li` через один (начиная с самого первого) установить класс `“item”`
-4. На все ссылки в примере установить класс `“custom-link”`
-
 > Код для задач брать с задач по Совйствам.
  */
 
@@ -67,6 +64,30 @@ console.log(uList);
 console.log('----------------------------------------------');
 
 
-//2. Найти в коде ссылку, находящуюся после списка `ul`, и добавить `id=link`
+// //2. Найти в коде ссылку, находящуюся после списка `ul`, и добавить `id=link`
 
-// const aUl = document.querySelector('a')
+console.log('----------------------------------------------');
+
+
+// 3. На `li` через один (начиная с самого первого) установить класс `“item”`
+
+let liList = document.querySelectorAll('li');
+
+  for (let i = 0; i < liList.length; i+=2) {
+    liList[i].classList.add('item');
+  }
+
+
+console.log(liList);
+console.log('----------------------------------------------');
+
+// 4. На все ссылки в примере установить класс `“custom-link”`
+
+const links = document.querySelectorAll('a');
+
+for (let i = 0; i < links.length; i++) {
+links[i].classList.add ('custom-link');
+}
+
+console.log(links);
+console.log('----------------------------------------------');
