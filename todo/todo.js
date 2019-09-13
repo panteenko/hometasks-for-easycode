@@ -19,6 +19,31 @@
   };
 
   const table = document.querySelector('.table tbody');
+  const form = document.querySelector('form');
+  const title = document.querySelector('input[name=title]');
+  const text = document.querySelector('input[name=text]');
+  const alertContainer = document.querySelector('.container');
+
+
+  form.addEventListener('submit', function(event){
+    event.preventDefault();
+
+    console.log(event.target);
+
+    if (title.value == '') {
+      console.log('title is empty');
+      alertMessage('alert-danger', 'title is empty');
+      return;
+    }
+
+    console.log('Title:', title.value);
+    addNewToDoToStorage(title.value, text.value);
+    alertMessage('alert-info', 'task added!');
+
+    form.reset();
+
+  })
+
 
   function generateId() {
     const words = '0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM';
@@ -41,7 +66,7 @@
       id: generateId(),
       title, //title: title,
       text: text || ''
-    }
+    };
 
     storage.todo.push(newTask);
     addNewTodoToView(newTask);
@@ -58,8 +83,8 @@
   }
 
     addNewToDoToStorage('Do Homework', 'dedline: 22.08.2019 09:00');
-    addNewToDoToStorage('sleep', 'everyday');
-    addNewToDoToStorage('eat');
+    // addNewToDoToStorage('sleep', 'everyday');
+    // addNewToDoToStorage('eat');
 
 
     console.log(storage.todo);
@@ -97,10 +122,10 @@
         storage.todo = todoList;
     }
     
-    storage.todo[0].id = '123';
+    // storage.todo[0].id = '123';
 
-    editTaskStorage('123', 'Edit title', 'new edited text');
-    console.log(storage.todo);
+    // editTaskStorage('123', 'Edit title', 'new edited text');
+    // console.log(storage.todo);
 
     /**
      * Create html template
@@ -119,5 +144,30 @@
       `
     }
 
+    function alertMessage (className, message) {
+
+      removeAlert();
+
+      const currentAlert = alertTemplate(className, message);
+
+      alertContainer.insertAdjacentHTML("afterbegin", currentAlert);
+      setTimeout(removeAlert, 1000);
+
+    }
+
+    function alertTemplate (className,message) {
+      return `<div class="alert ${className}">${message}</div>`;
+      
+    }
+
+    function removeAlert () {
+
+      const currentAlert = document.querySelector('.alert');
+      if (currentAlert) {
+        alertContainer.removeChild(currentAlert);
+      }
+
+    }
+      
 })();
 
