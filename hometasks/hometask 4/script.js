@@ -7,7 +7,8 @@ console.log('----------------------------------------------');
 // 2. Создать функцию, которая принимает в качестве аргумента узел DOM и возвращает информацию (в виде объекта) о типе узла, об имени узла и о количестве дочерних узлов (если детей нет - 0).
 
 let infoObj = {};
-function getInfo (node) {
+
+function getInfo(node) {
   let param = document.querySelector(node);
   infoObj.nodeType = param.nodeType;
   infoObj.name = param.nodeName;
@@ -27,7 +28,7 @@ console.log('----------------------------------------------');
 let textUl = document.querySelector('ul');
 let resArr = [];
 
-function getTextFromUl (list) {
+function getTextFromUl(list) {
   let text = textUl.innerText;
   resArr = text.split('\n');
   console.log(resArr);
@@ -48,7 +49,7 @@ for (let i = 0; i < arr.length; i++) {
 
   if (arr[i].nodeType === 3) {
     arr[i].textContent = '-text-';
-  } 
+  }
 }
 
 console.log(textToChange);
@@ -63,7 +64,7 @@ console.log('----------------------------------------------');
 //  */
 
 const uList = document.querySelector('ul');
-uList.classList.add ('list');
+uList.classList.add('list');
 console.log(uList);
 console.log('----------------------------------------------');
 
@@ -78,9 +79,9 @@ console.log('----------------------------------------------');
 
 let liList = document.querySelectorAll('li');
 
-  for (let i = 0; i < liList.length; i+=2) {
-    liList[i].classList.add('item');
-  }
+for (let i = 0; i < liList.length; i += 2) {
+  liList[i].classList.add('item');
+}
 
 console.log(liList);
 console.log('----------------------------------------------');
@@ -90,7 +91,7 @@ console.log('----------------------------------------------');
 const links = document.querySelectorAll('a');
 
 for (let i = 0; i < links.length; i++) {
-links[i].classList.add ('custom-link');
+  links[i].classList.add('custom-link');
 }
 console.log(links);
 console.log('----------------------------------------------');
@@ -112,21 +113,22 @@ console.log('----------------------------------------------');
 let myUl = document.querySelector('ul');
 let myLi = document.querySelectorAll('li');
 
-function createNewLi () {
+function createNewLi() {
 
-  // let newLi = document.createElement('li');
-  // newLi.classList.add('new-item');
-  // newLi.innerText = `item ${myLi.length + 1}`;
-  // myUl.append(newLi);
+  let newLi = document.createElement('li');
+  newLi.classList.add('new-item');
+  newLi.innerText = `item ${myLi.length + 1}`;
+  myUl.appendChild(newLi);
 
-  myUl.insertAdjacentHTML('beforeend', `
-    <li class='new-item'>item ${myLi.length + 1}</li>
-  `);
-  console.log(myLi);
+  // myUl.insertAdjacentHTML('beforeend', `
+  //   <li class='new-item'>item ${myLi.length + 1}</li>
+  // `);
+  return myUl;
 }
 
 createNewLi();
 createNewLi(); // не добавляет новую лишку в псевдомассив Лишек имеющихся на странице, не понимаю как это сделать
+console.log(myUl);
 
 console.log('----------------------------------------------');
 
@@ -134,7 +136,7 @@ console.log('----------------------------------------------');
 
 const allLinksInLi = document.querySelectorAll('li a');
 
-allLinksInLi.forEach(function(item) {
+allLinksInLi.forEach(function (item) {
 
   item.insertAdjacentHTML('beforeend', `<strong> test</strong>`);
 
@@ -146,18 +148,38 @@ console.log('----------------------------------------------');
 /*
 3. В начало документа (в начало `body`) добавить картинку `img` с атрибутами `src` и `alt` (текст придумайте сами). В `src` добавьте реальный `url` к картинке. Для создания элемента используйте метод `createElement`. */
 
-const newImg = document.createElement('img');
+let newImg = document.createElement('img');
 document.body.appendChild(newImg);
-newImg.setAtribute('src', 'https://unsplash.com/photos/m3R_31SEM_U');
+
+newImg.setAttribute('src', 'pic1.jpg');
+newImg.setAttribute('alt', 'huge picture');
 console.log(newImg);
+console.log('----------------------------------------------');
+/*
+4. Найти на странице элемент `mark`, добавить в конец содержимого текст `“green”` и на элемент установить класс green */
+
+let getMark = document.querySelector('mark');
+getMark.classList.add('green');
+getMark.insertAdjacentText('beforeend', `green`); 
+console.log(getMark);
+console.log('----------------------------------------------');
 
 
 /*
-4. Найти на странице элемент `mark`, добавить в конец содержимого текст `“green”` и на элемент установить класс green
-5. Отсортировать `li` внутри списка в обратном порядке (по тексту внутри)
+5. Отсортировать `li` внутри списка в обратном порядке (по тексту внутри)*/ 
 
-> Код для задач брать с задач по Свойствам.
+let myLi1 = document.querySelectorAll('li');
+let newArr = [];
+console.log(myLi1);
+for (let i = 0; i < myLi1.length; i++) {
+  newArr[i] = myLi1[i];
+}
+console.log(newArr);
+let sortedMyLi = newArr.sort();
+console.log(sortedMyLi); // какая-то мазафака, видимо опять делаю что-то не так
+console.log('----------------------------------------------');
 
+/*
 6. Дан массив пользователей, его можно скопировать [отсюда](https://www.notion.so/8e2b70ab692a4986b1816ce7dd2fb1ca), создать таблицу (см. презентацию).
 
 Условия:
